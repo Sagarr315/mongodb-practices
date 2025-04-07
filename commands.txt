@@ -32,7 +32,7 @@ DAY 1
 
 
 DAY 2
-CRUD Operations (read) using find() and findOne()
+CRUD OPERATIONS (READ) USING FIND() AND FINDONE()
 
 1.using the find() to search the record
 	first_db>  db.students.find({name:"tom"})
@@ -47,7 +47,8 @@ CRUD Operations (read) using find() and findOne()
 
 
 
-3.find() with the conditions only show records with age greaterthan 16 and =16 also for the lessthan and between specific age limit
+3.FIND() WITH THE CONDITIONS ONLY SHOW RECORDS WITH AGE GREATERTHAN 16 AND =16 ALSO FOR THE LESSTHAN AND BETWEEN SPECIFIC AGE LIMIT
+
 
 	first_db> db.students.find({age:{$gt:16}})
 [
@@ -97,3 +98,22 @@ using the id also can fetch the data or record
 	[
  	 { _id: ObjectId('67f3c756cc6bb3139bb7123c'), name: 'virat', age: 16 }
 	]
+
+
+*CREATE USING THE INSERTONE() AND INSERTMANY()
+
+
+	first_db> db.students.insertOne({ name: "sham",age: 19})
+{
+  acknowledged: true,
+  insertedId: ObjectId('67f3d15bcc6bb3139bb7123e')
+}
+	
+	first_db> db.students.insertMany([{ name: "abhi",age: 19},{"name":"abhishek",age:20}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67f3d1e2cc6bb3139bb7123f'),
+    '1': ObjectId('67f3d1e2cc6bb3139bb71240')
+  }
+}
