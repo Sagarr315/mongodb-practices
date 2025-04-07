@@ -32,3 +32,64 @@ DAY 1
 
 
 DAY 2
+CRUD Operations (read) using find() and findOne()
+
+1.using the find() to search the record
+	first_db>  db.students.find({name:"tom"})
+	[ { _id: ObjectId('67f3c72acc6bb3139bb71239'), name: 'tom', age: 12 } ]
+
+2.using the findOne()
+	first_db> db.students.findOne({name:"tom"})
+	{ _id: ObjectId('67f3c72acc6bb3139bb71239'), name: 'tom', age: 12 }
+
+
+
+
+
+
+3.find() with the conditions only show records with age greaterthan 16 and =16 also for the lessthan and between specific age limit
+
+	first_db> db.students.find({age:{$gt:16}})
+[
+  { _id: ObjectId('67f3c701cc6bb3139bb71236'), name: 'ramu', age: 18 },
+  { _id: ObjectId('67f3c70ecc6bb3139bb71237'), name: 'sham', age: 19 },
+  { _id: ObjectId('67f3c732cc6bb3139bb7123a'), name: 'jeery', age: 18 },
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 }
+]
+
+	first_db> db.students.find({age:{$gte:16}})
+[
+  { _id: ObjectId('67f3c701cc6bb3139bb71236'), name: 'ramu', age: 18 },
+  { _id: ObjectId('67f3c70ecc6bb3139bb71237'), name: 'sham', age: 19 },
+  { _id: ObjectId('67f3c732cc6bb3139bb7123a'), name: 'jeery', age: 18 },
+  { _id: ObjectId('67f3c74acc6bb3139bb7123b'), name: 'jaddu', age: 16 },
+  { _id: ObjectId('67f3c756cc6bb3139bb7123c'), name: 'virat', age: 16 },
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 }
+]
+
+
+	first_db> db.students.find({age:{$gt:16,$lt:18}})
+[
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 }
+]
+	
+	
+	first_db> db.students.find({age:{$gte:16,$lte:18}})
+[
+  { _id: ObjectId('67f3c701cc6bb3139bb71236'), name: 'ramu', age: 18 },
+  { _id: ObjectId('67f3c732cc6bb3139bb7123a'), name: 'jeery', age: 18 },
+  { _id: ObjectId('67f3c74acc6bb3139bb7123b'), name: 'jaddu', age: 16 },
+  { _id: ObjectId('67f3c756cc6bb3139bb7123c'), name: 'virat', age: 16 },
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 }
+]
+
+	
+	first_db> db.students.find({age:{$gt:16,$lte:18}})
+[
+  { _id: ObjectId('67f3c701cc6bb3139bb71236'), name: 'ramu', age: 18 },
+  { _id: ObjectId('67f3c732cc6bb3139bb7123a'), name: 'jeery', age: 18 },
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 }
+]
+
+
+
