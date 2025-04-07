@@ -92,4 +92,8 @@ CRUD Operations (read) using find() and findOne()
 ]
 
 
-
+using the id also can fetch the data or record 
+		first_db> db.students.find({_id: ObjectId('67f3c756cc6bb3139bb7123c')})
+	[
+ 	 { _id: ObjectId('67f3c756cc6bb3139bb7123c'), name: 'virat', age: 16 }
+	]
