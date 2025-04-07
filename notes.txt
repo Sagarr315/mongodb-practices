@@ -1,0 +1,50 @@
+1. What is MongoDB?
+MongoDB is a NoSQL database — unlike traditional databases (like MySQL or SQL Server) that use tables,
+MongoDB stores data in a flexible, JSON-like format called documents.
+It’s perfect for applications where data structure can change often (like modern web apps).
+
+
+✨ Main Features (Short & Sweet):
+1.Document-Oriented: Data is stored in documents (like JSON objects).
+2.Schema-less: You don’t need to define the structure of data (no fixed columns).
+3.High Performance: Super fast for read/write operations.
+4.Scalable: Handles big data easily with horizontal scaling (adding more machines).
+5.Flexible: You can store arrays, nested objects, etc.
+
+
+
+📄 Core Concepts
+1. Database
+Like a folder. Contains collections.
+
+2. Collection
+Like a table in SQL, but without fixed schema. Contains documents.
+
+Example:
+users collection, products collection
+
+3. Document
+Like a row in SQL, but in JSON format.
+
+Example:{
+  "name": "John",
+  "age": 25,
+  "email": "john@example.com"
+}
+
+Each document can have different fields. One document can have "age", another might not.
+
+
+
+4. _id
+Every document automatically gets a unique _id field (like a primary key).
+
+Differences Between SQL VS MongoDB Terminology:
+
+SQL	          MongoDB
+
+Table	         Collection
+Row	         Document
+Column	         Field
+Primary Key	 _id
+JOIN	         Embedding/Nesting (or $lookup for joins)
