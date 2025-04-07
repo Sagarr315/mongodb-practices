@@ -1,0 +1,31 @@
+
+
+DAY 1
+
+1.create the DB of the name first_db  :
+
+             use first_db
+
+2. Create the collection :   
+
+             db.createCollection("students")
+
+3.Insert documents into students collection
+              
+	     db.students.insertOne({ name: "ramu",age: 18})
+
+4.nested document 
+             db.students.updateOne({name:"Dhoni"} , {$set:{play{cricket:true,football:true}  }})
+
+5.Update all documents with array drink: ["tea", "coffee"]
+             
+             1)db.students.updateMany( {}, { $set: { drink: ["tea", "coffee"] } }  )
+ 
+             2)db.students.find({drink:"tea"}).count()
+
+                    using the 2)command the count() give the actual count 
+
+
+6.Query for the finding nested documents 
+             
+                db.students.find({"play.cricket":true}) 
