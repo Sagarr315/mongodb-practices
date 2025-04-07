@@ -48,3 +48,35 @@ Row	         Document
 Column	         Field
 Primary Key	 _id
 JOIN	         Embedding/Nesting (or $lookup for joins)
+
+
+
+CRUD Operations
+
+           READ USING:  1.find()  and  findOne()
+
+🔍 find() vs findOne()
+
+       Command                              Description
+	
+	find()	        Returns all matching documents as a cursor (like a pointer).
+	findOne()	Returns only the first matching document (just one object).
+
+*Cursor (from find())
+
+	1.Acts like a pointer to the result set.
+	2.You can loop through it or use .toArray() or .pretty() to display data.
+
+
+
+*What is a Cursor in MongoDB?
+
+	A cursor is like a pointer or iterator that MongoDB returns when you run find().
+
+	It doesn't give you all the data at once — instead, it gives you a stream of documents, so you can:
+	Scroll through large results efficiently
+	Use .forEach(), .toArray(), or .pretty() to handle the data
+
+*Think of it like:
+        A remote control that points to your data — you press "next" to fetch more as needed!
+
