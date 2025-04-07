@@ -29,3 +29,6 @@ DAY 1
 6.Query for the finding nested documents 
              
                 db.students.find({"play.cricket":true}) 
+
+
+DAY 2
