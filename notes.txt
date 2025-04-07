@@ -80,3 +80,11 @@ CRUD Operations
 *Think of it like:
         A remote control that points to your data — you press "next" to fetch more as needed!
 
+
+*CREATE OPERATIONS with insert 
+📥 insertOne()
+Inserts a single document into a collection.
+
+📥 insertMany()
+Inserts multiple documents at once (array of documents).
+
