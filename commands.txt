@@ -117,3 +117,131 @@ using the id also can fetch the data or record
     '1': ObjectId('67f3d1e2cc6bb3139bb71240')
   }
 }
+
+
+
+
+
+
+DAY 3
+CRUD OPERATIONS FOR UPDATE 
+
+first_db> db.students.find()
+[
+  { _id: ObjectId('67f3c701cc6bb3139bb71236'), name: 'ramu', age: 18 },
+  { _id: ObjectId('67f3c70ecc6bb3139bb71237'), name: 'sham', age: 19 },
+  { _id: ObjectId('67f3c717cc6bb3139bb71238'), name: 'ram', age: 15 },
+  { _id: ObjectId('67f3c72acc6bb3139bb71239'), name: 'tom', age: 12 },
+  { _id: ObjectId('67f3c732cc6bb3139bb7123a'), name: 'jeery', age: 18 },
+  { _id: ObjectId('67f3c74acc6bb3139bb7123b'), name: 'jaddu', age: 16 },
+  { _id: ObjectId('67f3c756cc6bb3139bb7123c'), name: 'virat', age: 16 },
+  { _id: ObjectId('67f3c76acc6bb3139bb7123d'), name: 'kane', age: 17 },
+  { _id: ObjectId('67f3d15bcc6bb3139bb7123e'), name: 'sham', age: 19 },
+  { _id: ObjectId('67f3d1e2cc6bb3139bb7123f'), name: 'abhi', age: 19 },
+  {
+    _id: ObjectId('67f3d1e2cc6bb3139bb71240'),
+    name: 'abhishek',
+    age: 20
+  }
+]
+		first_db> db.students.updateOne({name:"ram"},{$set:{age:14}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+
+
+first_db> db.studens.updateMany({age:16},{$set:{age:20}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+
+
+**updatemany with the condition**
+
+first_db> db.students.updateMany({age:{$lte:18}},{$set:{iseligible:"flase"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+first_db> db.students.find()
+[
+  {
+    _id: ObjectId('67f3c701cc6bb3139bb71236'),
+    name: 'ramu',
+    age: 18,
+    iseligible: 'flase'
+  },
+  { _id: ObjectId('67f3c70ecc6bb3139bb71237'), name: 'sham', age: 19 },
+  {
+    _id: ObjectId('67f3c717cc6bb3139bb71238'),
+    name: 'ram',
+    age: 14,
+    iseligible: 'flase'
+  },
+  {
+    _id: ObjectId('67f3c72acc6bb3139bb71239'),
+    name: 'tom',
+    age: 12,
+    iseligible: 'flase'
+  },
+  {
+    _id: ObjectId('67f3c732cc6bb3139bb7123a'),
+    name: 'jeery',
+    age: 18,
+    iseligible: 'flase'
+  },
+  {
+    _id: ObjectId('67f3c74acc6bb3139bb7123b'),
+    name: 'jaddu',
+    age: 16,
+    iseligible: 'flase'
+  },
+  {
+    _id: ObjectId('67f3c756cc6bb3139bb7123c'),
+    name: 'virat',
+    age: 16,
+    iseligible: 'flase'
+  },
+  {
+    _id: ObjectId('67f3c76acc6bb3139bb7123d'),
+    name: 'kane',
+    age: 17,
+    iseligible: 'flase'
+  },
+  { _id: ObjectId('67f3d15bcc6bb3139bb7123e'), name: 'sham', age: 19 },
+  { _id: ObjectId('67f3d1e2cc6bb3139bb7123f'), name: 'abhi', age: 19 },
+  {
+    _id: ObjectId('67f3d1e2cc6bb3139bb71240'),
+    name: 'abhishek',
+    age: 20
+  }
+]
+
+
+
+**deleteOne() and deleteMany()
+
+first_db> db.students.deleteOne({age:16})
+{ acknowledged: true, deletedCount: 1 }
+
+
+first_db>  db.students.deleteMany({age:18})
+{ acknowledged: true, deletedCount: 3 }
+
+
+first_db>  db.students.deleteMany({})
+{ acknowledged: true, deletedCount: 7 }
