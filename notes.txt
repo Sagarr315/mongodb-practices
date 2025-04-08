@@ -88,3 +88,19 @@ Inserts a single document into a collection.
 📥 insertMany()
 Inserts multiple documents at once (array of documents).
 
+
+***UPDATE OPERATIONS
+
+✏️ updateOne()
+Updates only the first matching document.
+
+✏️ updateMany()
+Updates all matching documents.
+
+
+***DElETE OPERATIONS
+❌ deleteOne()
+Deletes only the first matching document.
+
+❌ deleteMany()
+Deletes all matching documents
