@@ -119,7 +119,6 @@ db.collection.find({}, { name: 1, _id: 0 })         SHOWS ONLY NAME OF ALL DOCUM
 
 
 
-
 2️⃣ Why MongoDB is Schemaless
 MongoDB collections don’t require a fixed structure.
 You can store documents with different fields and types.
@@ -165,4 +164,22 @@ db.collection.drop()        // Deletes the whole collection.
 6️⃣ Drop/Delete Database
 
 db.dropDatabase()        //Deletes the current database.
+
+
+
+✅ What is ordered in MongoDB?
+When you use insertMany(), MongoDB by default uses:
+
+EXAMPLE : { ordered: true }
+
+That means:
+1.It inserts documents one by one in order.
+2.If one document fails, it stops and doesn’t insert the rest.
+
+
+
+📌 Summary:OF ORDERED OPTION
+
+ordered: true	Stops at first error ❌
+ordered: false	Continues even after errors ✅
 
