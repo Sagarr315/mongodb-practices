@@ -103,3 +103,66 @@ Deletes only the first matching document.
 
 ❌ deleteMany()
 Deletes all matching documents
+
+
+
+
+
+1️⃣Select one field (column) from documents
+🔹 With condition:
+
+db.collection.find({ age: 25 }, { name: 1, _id: 0 })    IT WILL ONLY NAME OF DOCUMENT WHERE AGE IS 25
+
+🔹 Without condition:
+
+db.collection.find({}, { name: 1, _id: 0 })         SHOWS ONLY NAME OF ALL DOCUMENTS 
+
+
+
+
+2️⃣ Why MongoDB is Schemaless
+MongoDB collections don’t require a fixed structure.
+You can store documents with different fields and types.
+
+EXAMPLE 
+// Document 1
+{ _id: 1, name: "Amit" }
+
+// Document 2
+{ _id: 2, name: "Rohit", city: "Mumbai" }
+
+💡 This flexibility is what makes MongoDB schemaless.
+
+
+3️⃣ Data Types in MongoDB
+
+String → "name": "Amit"
+
+Number → "age": 25
+
+Boolean → "isActive": true
+
+Array → "skills": ["JS", "Python"]
+
+Object → "address": { city: "Pune" }
+
+
+
+4️⃣ Check Type of a Field in JS (Mongo Shell)
+
+typeof "hello"       // string
+typeof 25            // number
+typeof true          // boolean
+typeof [1,2]         // object (array is a type of object)
+typeof {a:1}         // object
+
+
+5️⃣ Drop/Delete Collection
+
+db.collection.drop()        // Deletes the whole collection.
+
+
+6️⃣ Drop/Delete Database
+
+db.dropDatabase()        //Deletes the current database.
+
