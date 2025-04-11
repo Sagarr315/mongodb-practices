@@ -248,7 +248,14 @@ first_db>  db.students.deleteMany({})
 
 
 
-***select query using the condition
+
+
+
+
+
+DAY 4    ***select column query
+
+***select query
 
 first_db> db.students.find()
 [
@@ -267,7 +274,7 @@ first_db> db.students.find()
   { _id: ObjectId('67f8b5927921a1adbfb7123e'), name: 'sham', age: 20 }
 ]
 
-****show the all record with the name and id default
+****show the all record with the name and by id default
 first_db> db.students.find({},{name:1})
 [
   { _id: ObjectId('67f8b5927921a1adbfb71236'), name: 'abhishek' },
