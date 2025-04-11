@@ -301,3 +301,46 @@ first_db> db.students.find({},{name:1 , _id:0})
   { name: 'ram' },
   { name: 'sham' }
 ]
+
+
+
+
+
+
+**CREATED NEW DB NAME AMAZON AND IN THAT COLLECTION OF COMPANYDATA INSIDE IT WITH ONE DOCUMENT****
+
+amazon> db.companyData.insertOne({name:"amazon",funded:true,fundingamount:89376542345,employee:[{name:"ram",age:25},{name:"sham",age:35}],foundtimestamp: new Timestamp(),fondedON:new Date() })
+{
+  acknowledged: true,
+  insertedId: ObjectId('67f8d0077921a1adbfb7123f')
+}
+
+
+
+amazon> db.companyData.find()
+[
+  {
+    _id: ObjectId('67f8d0077921a1adbfb7123f'),
+    name: 'amazon',
+    funded: true,
+    fundingamount: 89376542345,
+    employee: [ { name: 'ram', age: 25 }, { name: 'sham', age: 35 } ],
+    foundtimestamp: Timestamp({ t: 1744359431, i: 1 }),
+    fondedON: ISODate('2025-04-11T08:17:11.826Z')
+  }
+]
+
+TO KNOW THE DATATYPES USE OF THE ****typeof****** 
+
+amazon>  typeof db.companyData.findOne().fondedON
+object
+amazon>  typeof db.companyData.findOne().foundtimestamp
+object
+amazon>  typeof db.companyData.findOne().employee
+object
+amazon>  typeof db.companyData.findOne().fundingamount
+number
+amazon>  typeof db.companyData.findOne().name
+string
+amazon>  typeof db.companyData.findOne().funded
+boolean
