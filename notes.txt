@@ -78,8 +78,7 @@ CRUD Operations
 	Use .forEach(), .toArray(), or .pretty() to handle the data
 
 *Think of it like:
-        A remote control that points to your data — you press "next" to fetch more as needed!
-
+        A remote control that points to your data — you press "next" to fetch more as needed!                
 
 *CREATE OPERATIONS with insert 
 📥 insertOne()
