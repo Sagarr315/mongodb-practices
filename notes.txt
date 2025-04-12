@@ -183,3 +183,26 @@ That means:
 ordered: true	Stops at first error ❌
 ordered: false	Continues even after errors ✅
 
+
+
+
+📌 1. What is writeConcern?
+writeConcern is used to control how MongoDB confirms a write operation (insert, update, delete).
+
+It decides:
+1).How safe you want your write
+2).How fast it should be
+
+
+🔧 2. Full example :
+db.collection.insertOne(
+  { name: "ram", age: 20 },
+  {
+    writeConcern: {
+      w: 1,
+      j: true,
+      wtimeout: 5000
+    }
+  }
+)
+
