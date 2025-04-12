@@ -208,9 +208,9 @@ db.collection.insertOne(
   }
 )
 
-**ABOUT ALL OPTION(W=WRITE J=JOURNAL WTIMEOUT=WRITETIMEOUT)**
+***ABOUT ALL OPTION(W=WRITE J=JOURNAL WTIMEOUT=WRITETIMEOUT)***
 
-w (Write Acknowledgment)
+*w (Write Acknowledgment)
 ➡️ Syntax Examples:
 writeConcern: { w: 0 }
 writeConcern: { w: 1 }
@@ -238,7 +238,7 @@ w: "majority": For critical data.
 
 
 
-💾 j (Journal Write)
+**💾 j (Journal Write)
 ➡️ Syntax:
 writeConcern: { j: true }
 writeConcern: { j: false }
@@ -256,3 +256,20 @@ j: false: Don’t wait for journaling (faster).
 j: true: Use when data must not be lost even if power fails.
 
 j: false: Use for speed when durability isn’t critical.
+
+
+
+***⏱️ wtimeout (Wait Timeout)
+➡️ Syntax:
+writeConcern: { w: 1, wtimeout: 3000 }
+
+
+📝 Meaning:
+
+Wait max 3000ms (3 sec) for write acknowledgment.
+If write not confirmed within timeout → error.
+
+
+📌 Use:
+
+Prevents app from hanging too long on write delays.
