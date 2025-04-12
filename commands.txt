@@ -305,7 +305,7 @@ first_db> db.students.find({},{name:1 , _id:0})
 
 
 
-
+DAY 5
 
 **CREATED NEW DB NAME AMAZON AND IN THAT COLLECTION OF COMPANYDATA INSIDE IT WITH ONE DOCUMENT****
 
@@ -343,4 +343,41 @@ number
 amazon>  typeof db.companyData.findOne().name
 string
 amazon>  typeof db.companyData.findOne().funded
-boolean
+Boolean
+
+
+
+DAY 6
+
+**** COMMANDS FOR ALL OPTION FOR THE WRITE CONCERNS INCLUDE({W,J,WTIMEOUT})***
+
+
+*ONLY WITHW:0
+product> db.books.insertOne({name:"b",price:400},{writeConcern:{w:0}})
+{
+  acknowledged: false,
+  insertedId: ObjectId('67fa645ebc824e67aeb71238')
+}
+
+**WITH W:0 AND J:FALSE**
+product> db.books.insertOne({name:"c",price:500},{writeConcern:{w:0,j:false}})
+{
+  acknowledged: false,
+  insertedId: ObjectId('67fa6482bc824e67aeb71239')
+}
+
+
+product> db.books.find()
+[
+  { _id: ObjectId('67fa6384bc824e67aeb71237'), name: 'a', price: 300 },
+  { _id: ObjectId('67fa645ebc824e67aeb71238'), name: 'b', price: 400 },
+  { _id: ObjectId('67fa6482bc824e67aeb71239'), name: 'c', price: 500 }
+]
+
+
+***WITH W:0  ,J:FALSE , WTIMEOUT:**
+product> db.books.insertOne({name:"e",price:700},{writeConcern:{w:0,j:true,wtimeout: 5000}})
+{
+  acknowledged: false,
+  insertedId: ObjectId('67fa658ebc824e67aeb7123b')
+}
