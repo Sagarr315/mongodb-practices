@@ -236,3 +236,23 @@ w: 1: For common safe writes.
 
 w: "majority": For critical data.
 
+
+
+💾 j (Journal Write)
+➡️ Syntax:
+writeConcern: { j: true }
+writeConcern: { j: false }
+
+📝 Meaning:
+
+j: true: Wait until write is stored in journal (disk-safe).
+
+j: false: Don’t wait for journaling (faster).
+
+
+
+📌 Use:
+
+j: true: Use when data must not be lost even if power fails.
+
+j: false: Use for speed when durability isn’t critical.
