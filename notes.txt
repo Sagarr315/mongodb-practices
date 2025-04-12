@@ -193,8 +193,10 @@ It decides:
 1).How safe you want your write
 2).How fast it should be
 
-
 🔧 2. Full example :
+   {w:<value> j: <bollean> wtimeout:number}
+
+🔧 3. Full example :
 db.collection.insertOne(
   { name: "ram", age: 20 },
   {
