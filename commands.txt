@@ -408,3 +408,12 @@ first_db>  db.students.find({age:{$ne:18}})
   { _id: ObjectId('67f8b5927921a1adbfb7123d'), name: 'ram', age: 22 },
   { _id: ObjectId('67f8b5927921a1adbfb7123e'), name: 'sham', age: 20 }
 ]
+
+
+
+first_db> db.students.find({age:{$in:[20,21]}})
+[
+  { _id: ObjectId('67f8b5927921a1adbfb7123b'), name: 'abhi', age: 20 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123c'), name: 'shamu', age: 21 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123e'), name: 'sham', age: 20 }
+]
