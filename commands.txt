@@ -417,3 +417,18 @@ first_db> db.students.find({age:{$in:[20,21]}})
   { _id: ObjectId('67f8b5927921a1adbfb7123c'), name: 'shamu', age: 21 },
   { _id: ObjectId('67f8b5927921a1adbfb7123e'), name: 'sham', age: 20 }
 ]
+
+
+first_db>  db.students.find({age:{$nin:[20,21]}})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71236'),
+    name: 'abhishek',
+    age: 19
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb71237'), name: 'rahul', age: 15 },
+  { _id: ObjectId('67f8b5927921a1adbfb71238'), name: 'rohit', age: 18 },
+  { _id: ObjectId('67f8b5927921a1adbfb71239'), name: 'virat', age: 16 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123a'), name: 'dhoni', age: 18 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123d'), name: 'ram', age: 22 }
+]
