@@ -347,3 +347,26 @@ mongoimport --db school --collection students --file students.json --jsonArray
 Your MongoDB server must be running before using this.
 mongoimport is used from terminal or VS Code terminal (not from inside the Mongo shell).
 The file must be valid JSON.
+
+
+
+
+
+
+📊 Comparison Operators (Used to compare values)
+
+Operator		Definition
+
+$eq		Checks if values are equal.
+$ne		Checks if values are not equal.
+$lt		Checks if value is less than given value.
+$gt		Checks if value is greater than given value.
+$lte		Checks if value is less than or equal to.
+$gte		Checks if value is greater than or equal to.
+$in		Checks if value exists in a given array.
+$nin		Checks if value does NOT exist in a given array.
+
+
+
+
+
