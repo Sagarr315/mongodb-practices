@@ -369,4 +369,11 @@ $nin		Checks if value does NOT exist in a given array.
 
 
 
+🧠 Logical Operators (Used to combine multiple conditions)
 
+Operator	    Definition
+
+$and		Joins multiple conditions, all must be true.
+$or		Joins conditions, at least one must be true.
+$not		Negates the condition (returns opposite).
+$nor		Returns true only if all conditions are false.
