@@ -375,9 +375,22 @@ product> db.books.find()
 ]
 
 
-***WITH W:0  ,J:FALSE , WTIMEOUT:**
+***WITH W:0  ,J:FALSE , WTIMEOUT:5000**
 product> db.books.insertOne({name:"e",price:700},{writeConcern:{w:0,j:true,wtimeout: 5000}})
 {
   acknowledged: false,
   insertedId: ObjectId('67fa658ebc824e67aeb7123b')
 }
+
+
+
+****comparision operator**** 
+
+first_db> db.students.find({age:{$eq:18}})
+[
+  { _id: ObjectId('67f8b5927921a1adbfb71238'), name: 'rohit', age: 18 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123a'), name: 'dhoni', age: 18 }
+]
+
+
+
