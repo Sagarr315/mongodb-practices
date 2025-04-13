@@ -432,3 +432,125 @@ first_db>  db.students.find({age:{$nin:[20,21]}})
   { _id: ObjectId('67f8b5927921a1adbfb7123a'), name: 'dhoni', age: 18 },
   { _id: ObjectId('67f8b5927921a1adbfb7123d'), name: 'ram', age: 22 }
 ]
+
+
+
+
+******LOGICAL OPERATOR ($and $or  $not $nor)********
+
+********using $or*********
+first_db> db.students.find({$or:[ {age:{$lte:21}},{age:{$gte:18}} ]})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71236'),
+    name: 'abhishek',
+    age: 19
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb71237'), name: 'rahul', age: 15 },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71238'),
+    name: 'rohit',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb71239'), name: 'virat', age: 16 },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123a'),
+    name: 'dhoni',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123b'),
+    name: 'abhi',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb7123c'), name: 'shamu', age: 21 },
+  { _id: ObjectId('67f8b5927921a1adbfb7123d'), name: 'ram', age: 22 },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123e'),
+    name: 'sham',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  }
+]
+
+********using $nor*********
+ db.students.find({$nor:[ {age:{$lte:17}},{age:{$gte:21}} ]})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71236'),
+    name: 'abhishek',
+    age: 19
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71238'),
+    name: 'rohit',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123a'),
+    name: 'dhoni',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123b'),
+    name: 'abhi',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123e'),
+    name: 'sham',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  }
+]
+
+
+
+********using $and**********8
+first_db> db.students.find({$and:[ {age:{$lt:22}}, {hobbies:"Running"} ]})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123b'),
+    name: 'abhi',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123e'),
+    name: 'sham',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  }
+]
+
+
+************using $not*************
+
+first_db> db.students.find({age:{$not:{$gte:20}}})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71236'),
+    name: 'abhishek',
+    age: 19
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb71237'), name: 'rahul', age: 15 },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71238'),
+    name: 'rohit',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  { _id: ObjectId('67f8b5927921a1adbfb71239'), name: 'virat', age: 16 },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123a'),
+    name: 'dhoni',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  }
+]
