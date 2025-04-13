@@ -273,3 +273,77 @@ If write not confirmed within timeout → error.
 📌 Use:
 
 Prevents app from hanging too long on write delays.
+
+
+
+
+
+✅ Atomicity in MongoDB – Simple Theory
+
+📌 What is Atomicity?
+Atomicity means:
+"All or nothing" — the operation completes fully or doesn’t happen at all.
+
+📍 Where is Atomicity in MongoDB?
+1. ✅ At Document Level
+MongoDB operations (like insert, update, delete) are atomic on a single document.
+Even if the document is big or nested (has arrays, embedded docs), changes inside it are atomic.
+
+
+2. 🔁 For Multiple Documents (Using Transactions)
+If you want atomicity across multiple documents or collections, you need to use transactions.
+
+Transactions ensure all operations succeed or none do (just like in SQL databases).
+
+
+🔒 Why Atomicity is Important?
+Keeps data consistent
+Prevents half-updated or broken states
+
+
+
+🧠 Summary:
+      Level                             Atomicity
+Single Document	        ✅ Yes
+Multiple Documents	❌ (without transaction) / ✅ (with transaction)
+
+
+
+
+
+✅ we,can import JSON into MongoDB
+
+🛠️ Tool used:
+mongoimport – a MongoDB CLI tool for importing data.
+
+📌 Basic Syntax:
+mongoimport --db yourDB --collection yourCollection --file yourFile.json --jsonArray
+
+🧾 Explanation of each part:
+   Option	                  Meaning
+--db yourDB	            Your database name
+--collection                yourCollection	Your collection name
+--file yourFile.json	    Path to your JSON file (can be full path)
+--jsonArray	            If your JSON file has an array of docs
+
+
+
+📂 Example:
+You have a file students.json like:
+
+[
+  { "name": "ram", "age": 20 },
+  { "name": "shyam", "age": 21 }
+]
+
+
+Use this command:
+mongoimport --db school --collection students --file students.json --jsonArray
+
+
+
+
+🔄 Important Notes:
+Your MongoDB server must be running before using this.
+mongoimport is used from terminal or VS Code terminal (not from inside the Mongo shell).
+The file must be valid JSON.
