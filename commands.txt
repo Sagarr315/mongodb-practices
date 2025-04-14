@@ -554,3 +554,37 @@ first_db> db.students.find({age:{$not:{$gte:20}}})
     hobbies: [ 'walk', 'cooking' ]
   }
 ]
+
+
+
+
+
+
+
+first_db> db.students.find({hobbies:{$exists:true}})
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71238'),
+    name: 'rohit',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123a'),
+    name: 'dhoni',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123b'),
+    name: 'abhi',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123e'),
+    name: 'sham',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ]
+  }
+]
