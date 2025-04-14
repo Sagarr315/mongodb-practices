@@ -377,3 +377,28 @@ $and		Joins multiple conditions, all must be true.
 $or		Joins conditions, at least one must be true.
 $not		Negates the condition (returns opposite).
 $nor		Returns true only if all conditions are false.
+
+
+
+
+🔎 $exists
+📌 Definition:
+Checks whether a field exists or not in a document.
+
+🧠 Use:
+true → Field must be present
+
+false → Field must be absent
+
+🧬 $type
+📌 Definition:
+Checks the data type of a field’s value.
+
+🧠 Use:
+Used to match values of a specific BSON type like:
+
+string, int, bool, array, object, etc.
+
+You can also use type number codes (e.g., 2 for string, 16 for int).
+
+
