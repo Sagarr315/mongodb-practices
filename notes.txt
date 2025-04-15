@@ -402,3 +402,52 @@ string, int, bool, array, object, etc.
 You can also use type number codes (e.g., 2 for string, 16 for int).
 
 
+
+
+🔍 Special Operators in MongoDB
+
+Operator		Definition / Use
+
+$expr		Allows you to use aggregation expressions inside a query. Helps compare fields with each other (like "price" > "cost").
+$regex		Used to match string patterns (like search using part of a word or case-insensitive matching).
+$mod		Used to match numbers using modulus (e.g., find numbers divisible by 5).
+$jsonSchema	Validates documents using schema rules (like required fields, data types, etc.).
+$text		Used to perform text search on string content (like full-text search).()
+		
+✅ What to Do Before Using $text
+You must create a text index on the field(s) where you want to perform text search.
+You can create a text index on:
+A single field
+Or multiple fields
+Only fields with a text index can be used in a $text query.
+
+
+
+🧺 Array Operators in MongoDB
+
+Operator	Use / Definition
+$size	Matches documents where the array has a specific number of elements.
+$elemMatch	Matches documents where at least one element in the array matches all the specified conditions.
+$all	Matches documents where the array contains all the specified elements, in any order.
+$in	Matches documents where the field’s value is in the given array of values (can be used on arrays and non-arrays too).
+
+
+
+📚 Theory: Sorting in MongoDB
+🔹 What is Sorting?
+Sorting is used to arrange the output of a query in ascending or descending order based on one or more fields.
+
+🔹 Syntax:
+db.collection.find().sort({ fieldName: 1 })   // Ascending
+db.collection.find().sort({ fieldName: -1 })  // Descending
+ 
+1 → Ascending (small to large / A to Z)
+
+-1 → Descending (large to small / Z to A)
+
+🔹 Why it's effortless?
+No need to write complex logic.
+Just mention the field and direction (1 or -1).
+Can sort by multiple fields too (priority left to right).
+
+
