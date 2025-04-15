@@ -861,3 +861,56 @@ first_db> db.students.find({ experiences:{$size:2}})
     ]
   }
 ]
+
+
+
+first_db> db.students.find({ hobbies: { $all: ['cooking', 'Running'] } })
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71237'),
+    name: 'rahul',
+    age: 15,
+    hobbies: [ 'cooking', 'Running' ]
+  }
+]
+first_db> db.students.find({ hobbies: { $in: ['cooking', 'Running'] } })
+[
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71237'),
+    name: 'rahul',
+    age: 15,
+    hobbies: [ 'cooking', 'Running' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb71238'),
+    name: 'rohit',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123a'),
+    name: 'dhoni',
+    age: 18,
+    hobbies: [ 'walk', 'cooking' ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123b'),
+    name: 'abhi',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ],
+    experiences: [
+      { company: 'amazon', duration: 3 },
+      { company: 'google', duration: 2 }
+    ]
+  },
+  {
+    _id: ObjectId('67f8b5927921a1adbfb7123e'),
+    name: 'sham',
+    age: 20,
+    hobbies: [ 'Running', 'reading' ],
+    experiences: [
+      { company: 'amazon', duration: 3 },
+      { company: 'google', duration: 2 }
+    ]
+  }
+]
