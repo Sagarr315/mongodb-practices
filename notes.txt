@@ -471,3 +471,21 @@ If the document matches, it is updated.
 If no match, a new document is inserted.
 
 Enabled by using { upsert: true } in updateOne() or updateMany().
+
+
+
+
+
+🔄 Update Nested Arrays
+To update a nested array (array inside a sub-document), you can use dot notation or array filters to target the right element.
+
+Example:
+db.collection.updateOne({"name": "Ram"}, {$set: {"marks.math": 90}})
+
+🧺 Array Update Operators
+
+Operator	Use / Definition
+$push	Adds a value to the end of an array.
+$addToSet	Adds a value only if it doesn't already exist in the array (no duplicates).
+$pop	Removes an item from the array — -1 for first, 1 for last element.
+$pull	Removes all matching elements from an array.
