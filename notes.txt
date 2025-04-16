@@ -464,4 +464,10 @@ $mul	Multiplies the value of a field by a specified number.
 $unset	Removes a field from the document.
 $rename	Renames a field in the document.
 
+🔄 Upsert
+Upsert = Update + Insert
 
+If the document matches, it is updated.
+If no match, a new document is inserted.
+
+Enabled by using { upsert: true } in updateOne() or updateMany().
