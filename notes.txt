@@ -451,3 +451,17 @@ Just mention the field and direction (1 or -1).
 Can sort by multiple fields too (priority left to right).
 
 
+
+
+
+🔧 Update Operators in MongoDB
+
+Operator	Use / Definition
+$inc	Increases or decreases a numeric field by a given value.
+$min	Updates the field only if the new value is less than the current value.
+$max	Updates the field only if the new value is greater than the current value.
+$mul	Multiplies the value of a field by a specified number.
+$unset	Removes a field from the document.
+$rename	Renames a field in the document.
+
+
