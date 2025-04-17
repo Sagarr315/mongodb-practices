@@ -995,3 +995,14 @@ first_db> db.students.find({name:"sham"})
     ]
   }
 ]
+
+
+
+first_db> db.students.updateOne({name:"sham"},{$max:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
