@@ -916,7 +916,78 @@ first_db> db.students.find({ hobbies: { $in: ['cooking', 'Running'] } })
 ]
 
 
-
+product> db.fruits.find()
+[
+  {
+    _id: ObjectId('680245a479dbadb5b9b71237'),
+    farmername: 'Ram',
+    products: [
+      { name: 'apple', quantity: 16 },
+      { name: 'orange', quantity: 14 },
+      { name: 'mango', quantity: 12 }
+    ]
+  },
+  {
+    _id: ObjectId('680245e179dbadb5b9b71238'),
+    farmername: 'ramu',
+    products: [
+      { name: 'apple', quantity: 14 },
+      { name: 'orange', quantity: 1 },
+      { name: 'mango', quantity: 9 }
+    ]
+  },
+  {
+    _id: ObjectId('6802468779dbadb5b9b71239'),
+    farmername: 'sham',
+    products: [
+      { name: 'apple', quantity: 17 },
+      { name: 'orange', quantity: 6 },
+      { name: 'mango', quantity: 8 }
+    ]
+  }
+]
+product> db.fruits.find({$and: [{ "products.name":"apple"},{"products.quantity":{$gt:15}} ]})
+[
+  {
+    _id: ObjectId('680245a479dbadb5b9b71237'),
+    farmername: 'Ram',
+    products: [
+      { name: 'apple', quantity: 16 },
+      { name: 'orange', quantity: 14 },
+      { name: 'mango', quantity: 12 }
+    ]
+  },
+  {
+    _id: ObjectId('6802468779dbadb5b9b71239'),
+    farmername: 'sham',
+    products: [
+      { name: 'apple', quantity: 17 },
+      { name: 'orange', quantity: 6 },
+      { name: 'mango', quantity: 8 }
+    ]
+  }
+]
+product> db.fruits.find({products:{ $elemMatch :{quantity:{$gt:15},name:"apple"} } })
+[
+  {
+    _id: ObjectId('680245a479dbadb5b9b71237'),
+    farmername: 'Ram',
+    products: [
+      { name: 'apple', quantity: 16 },
+      { name: 'orange', quantity: 14 },
+      { name: 'mango', quantity: 12 }
+    ]
+  },
+  {
+    _id: ObjectId('6802468779dbadb5b9b71239'),
+    farmername: 'sham',
+    products: [
+      { name: 'apple', quantity: 17 },
+      { name: 'orange', quantity: 6 },
+      { name: 'mango', quantity: 8 }
+    ]
+  }
+]
 
 
 
